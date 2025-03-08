@@ -1,0 +1,1 @@
+CAS_IMAGE_PATH = 'uploads/cas'

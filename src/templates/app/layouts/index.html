@@ -1,0 +1,128 @@
+{% extends "app/base/base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <main>
+        <div class="slider-area position-relative">
+            <div class="slider-active dot-style">
+                <!-- Single Slider -->
+                <div class="single-slider hero-overly slider-height d-flex align-items-center" style="background-image: url({% static 'app/assets/img/hero/h1_hero1.webp' %}");>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
+                                <div class="hero-caption">
+                                    <h1 data-animation="fadeInUp" data-delay=".2s">Support a causes you care about</h1>
+                                    <P data-animation="fadeInUp" data-delay=".4s">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet 
+                                    pulvinar ante tempor etiam lacus eros</P>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Slider -->
+                <div class="single-slider hero-overly01  slider-height slider-bg2 d-flex align-items-center">
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
+                                <div class="hero-caption">
+                                    <h1 data-animation="fadeInUp" data-delay=".2s">Support a causes you care about</h1>
+                                    <P data-animation="fadeInUp" data-delay=".4s">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet 
+                                    pulvinar ante tempor etiam lacus eros</P>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Slider -->
+                <div class="single-slider hero-overly slider-height d-flex align-items-center" style="background-image: url({% static 'app/assets/img/hero/enfant.jpg' %}")>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
+                                <div class="hero-caption">
+                                    <h1 data-animation="fadeInUp" data-delay=".2s">Support a causes you care about</h1>
+                                    <P data-animation="fadeInUp" data-delay=".4s">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet 
+                                    pulvinar ante tempor etiam lacus eros</P>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-area1 section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-sm-11">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center mb-60">
+                            <h2>Nos différents cas</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="services1-active">
+                    {% for cas in get_some_cas %}
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <!-- Single -->
+                            <div class="properties pb-30">
+                                <div class="properties-card"  style="background-color:#fff" onmouseover="this.style.boxShadow='0px 8px 8px 0px rgba(2,25,65,0.08)'" >
+                                    <div class="properties-img">
+                                        <a href="#"><img src="{{cas.picture.url}}" alt=""></a>
+                                        <!-- Progress Bar -->
+                                        
+                                        <!-- / progress -->
+                                    </div>
+                                    <div class="wrap-wrapper">
+                                        <div class="properties-caption">
+                                            <h3><a href="#"  onmouseover="this.style.color='#1f2b7b'" >{{cas.title}}</a></h3>
+                                            <p>{{cas.description  | truncatechars:50}}</p>
+                                        </div>
+                                        <div class="properties-footer d-flex justify-content-between align-items-center">
+                                            <div class="class-day">
+                                                <a href="#" class="genric-btn primary circle">Voir +</a>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                </div> 
+            </div>
+        </div>
+
+        <div class="support-company-area section-padding">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-6 col-lg-6 col-md-10">
+                        <div class="support-location-img">
+                            <img src="{% static 'app/assets/img/gallery/ong4.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-md-10">
+                        <div class="right-caption">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle">
+                                <h2>Qui sommes-nous ?</h2>
+                            </div>
+                            <div class="support-caption">
+                                <p class="mb-10">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet 
+                                pulvinar ante tempor etiam lacus eros</p>
+                                <p class="pera-top">The legal definition of a charitable organization (and of charity) varies between countries and in some instances regions of the country. The regulation, the tax treatment, and the way in which charity law affects charitable organizations also vary.</p>
+                                <a href="about.html" class="genric-btn primary circle about-btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock content %}
