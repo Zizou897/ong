@@ -1,0 +1,67 @@
+{% extends "app/base/base.html" %}
+{% load static %}
+{% block content %}
+
+<main>
+    <div class="slider-area">
+        <div class="slider-height2 slider-bg4 hero-overly d-flex align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-5 col-lg-6 col-md-6">
+                        <div class="hero-caption hero-caption2">
+                            <h2>A Propos</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <div class="support-company-area section-padding">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="support-location-img">
+                        <img src="{% static 'app/assets/img/gallery/ong4.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6 col-md-10">
+                    <div class="right-caption">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle">
+                            <h2>Qui sommes-nous ?</h2>
+                        </div>
+                        <div class="support-caption">
+                            <p class="mb-10"><strong> ONG International de Lutte Contre la Maltraitance de l'Enfant, de la Femme et de la Veuve</strong> ( ILCMEFV ) lutte contre la maltraitance des enfants, femmes et veuves, offrant protection, soutien et espoir aux plus vulnérables.</p>
+                                <p class="pera-top">Nous sensibilisons, prévenons et accompagnons les victimes avec une aide juridique, psychologique et sociale, pour un monde plus juste et digne pour tous.</p>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="emargency-care section-img-bg2" data-background="{% static 'app/assets/img/gallery/section-bg2.jpg' %}">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-xl-6 col-lg-8 col-md-9 col-sm-12">
+                    <div class="single-emargency">
+                        <div class="emargency-cap">
+                            <h2><strong>Comment aider ?</strong></h2>
+                            <p>Vous pouvez faire la différence dès aujourd’hui :</p>
+                           
+                                <span>🤝 <strong>Faire un don</strong> – Chaque contribution nous permet d’aider plus de personnes</span>
+                                <br><span>🌍 <strong>Devenir bénévole</strong> – Rejoignez-nous pour apporter un soutien sur le terrain</span>
+                                <br><span>📢 <strong>Partager et sensibiliser</strong> – Faites entendre notre cause en diffusant nos messages</span>
+                           
+                            <br><br><a href="{% url "contact" %}" class="genric-btn primary circle">Faire un don →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

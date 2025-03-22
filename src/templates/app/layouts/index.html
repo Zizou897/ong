@@ -4,7 +4,7 @@
 
 
     <main>
-        <div class="slider-area position-relative">
+        <div class="slider-area position-relative mb-7">
             <div class="slider-active dot-style">
                 <!-- Single Slider -->
                 <div class="single-slider hero-overly slider-height d-flex align-items-center" style="background-image: url({% static 'app/assets/img/hero/h1_hero1.webp' %}");>
@@ -12,9 +12,8 @@
                         <div class="row">
                             <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
                                 <div class="hero-caption">
-                                    <h1 data-animation="fadeInUp" data-delay=".2s">Support a causes you care about</h1>
-                                    <P data-animation="fadeInUp" data-delay=".4s">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet 
-                                    pulvinar ante tempor etiam lacus eros</P>
+                                    <h1 data-animation="fadeInUp" data-delay=".2s">Soutenir les veuves, reconstruire des vies</h1>
+                                    <P data-animation="fadeInUp" data-delay=".4s">Les veuves font faces à de nombreux défis. Apportons-leus le soutient et la solidarité dont elles ont besoins.</P>
                                     
                                 </div>
                             </div>
@@ -27,7 +26,7 @@
                         <div class="row justify-content-end">
                             <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
                                 <div class="hero-caption">
-                                    <h1 data-animation="fadeInUp" data-delay=".2s">Support a causes you care about</h1>
+                                    <h1 data-animation="fadeInUp" data-delay=".2s">Soutenir une cause qui vous tient à coeur</h1>
                                     <P data-animation="fadeInUp" data-delay=".4s">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet 
                                     pulvinar ante tempor etiam lacus eros</P>
                                     
@@ -42,13 +41,25 @@
                         <div class="row">
                             <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
                                 <div class="hero-caption">
-                                    <h1 data-animation="fadeInUp" data-delay=".2s">Support a causes you care about</h1>
-                                    <P data-animation="fadeInUp" data-delay=".4s">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet 
-                                    pulvinar ante tempor etiam lacus eros</P>
-                                    
+                                    <h1 data-animation="fadeInUp" data-delay=".2s">Briser le silence, proteger l'innocence</h1>
+                                    <P data-animation="fadeInUp" data-delay=".4s">Chaque enfant merite  de grandir dans un environnement sur et aimant. Ensemble, mettant fin à la maltraitance infantile</P>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-services position-relative"  style="padding-top: 100px">
+            <div class="container">
+                <div class="row justify-content-sm-center">
+                    <div class="col-xl-7 col-lg-8 col-md-11">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center">
+                            <h2>Nous servons le peuple</h2>
+                            <p>Nous luttons pour un monde plus juste en protégeant les enfants, les femmes et les veuves contre la maltraitance et les violences. <br> Rejoignez-nous dans cette mission essentielle</p>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -113,10 +124,112 @@
                                 <h2>Qui sommes-nous ?</h2>
                             </div>
                             <div class="support-caption">
-                                <p class="mb-10">Sedac odio aliquet, fringilla odio eget, tincidunt nunc. Duis aliquet 
-                                pulvinar ante tempor etiam lacus eros</p>
-                                <p class="pera-top">The legal definition of a charitable organization (and of charity) varies between countries and in some instances regions of the country. The regulation, the tax treatment, and the way in which charity law affects charitable organizations also vary.</p>
-                                <a href="about.html" class="genric-btn primary circle about-btn">Learn More</a>
+                                <p class="mb-10"><strong> ONG International de Lutte Contre la Maltraitance de l'Enfant, de la Femme et de la Veuve</strong> ( ILCMEFV ) lutte contre la maltraitance des enfants, femmes et veuves, offrant protection, soutien et espoir aux plus vulnérables.</p>
+                                <p class="pera-top">Nous sensibilisons, prévenons et accompagnons les victimes avec une aide juridique, psychologique et sociale, pour un monde plus juste et digne pour tous.</p>
+                                <a href="{% url "about" %}" class="genric-btn primary circle about-btn">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="count-down-area pt-25 section-img-bg2"  data-background="{% static 'app/assets/img/gallery/pattern.jpg' %}">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="count-down-wrapper" >
+                            <div class="row justify-content-between">
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="single-counter d-flex align-items-center">
+                                        <div class="counter-img">
+                                            <img src="assets/img/icon/count-icon1.svg" alt="">
+                                        </div>
+                                        <div class="captions">
+                                            <span class="counter" style="color:black">35</span>
+                                            <span class="plus" style="color:black">+</span>
+                                            <p class="" style="color:black">Cas Traités</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="single-counter d-flex align-items-center">
+                                        <div class="counter-img">
+                                            <img src="assets/img/icon/count-icon2.svg" alt="">
+                                        </div>
+                                        <div class="captions">
+                                            <span class="counter" style="color:black">12</span>
+                                            <span class="plus" style="color:black"></span>
+                                            <p class="color-green" style="color:black">Enfants maltraités</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="single-counter d-flex align-items-center">
+                                        <div class="counter-img">
+                                            <img src="assets/img/icon/count-icon3.svg" alt="">
+                                        </div>
+                                        <div class="captions">
+                                            <span class="counter" style="color:black">10</span>
+                                            <span class="plus" style="color:black"></span>
+                                            <p class="color-green" style="color:black">Femmes maltraités</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="single-counter d-flex align-items-center">
+                                        <div class="counter-img">
+                                            <img src="assets/img/icon/count-icon4.svg" alt="">
+                                        </div>
+                                        <div class="captions">
+                                            <span class="counter"style="color:black">13</span>
+                                            <span class="plus" style="color:black"></span>
+                                            <p class="color-green"style="color:black">Veuves</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-services section-padding position-relative">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-icon">
+                                <img src= "{% static 'assets/img/icon/services1.svg' %}" alt="">
+                            </div>
+                            <div class="services-cap">
+                                <h4><strong>La Maltraitance d'enfant</strong></h4>
+                                <p>Chaque jour, des millions d’enfants subissent violences, négligence et exploitation, affectant gravement leur avenir. Protégeons-les dès aujourd’hui pour un futur meilleur !</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-icon">
+                                <img src="assets/img/icon/services2.svg" alt="">
+                            </div>
+                            <div class="services-cap">
+                                <h4><strong>La Maltraitance de la femme</strong></h4>
+                                <p>Les violences envers les femmes sont alarmantes et souvent impunies, les laissant sans protection. Aucune ne devrait vivre dans la peur. Agissons pour un monde plus sûr et équitable !
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-icon">
+                                <img src="assets/img/icon/services1.svg" alt="">
+                            </div>
+                            <div class="services-cap">
+                                <h4><strong>La Maltraitance de la veuve</strong></h4>
+                                <p>Dans de nombreuses sociétés, les veuves sont discriminées, privées de leurs droits et laissées sans ressources. Elles méritent dignité et justice. Aidons-les à reconstruire leur avenir.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -124,5 +237,10 @@
             </div>
         </div>
     </main>
+    <style>
+        .black {
+            color: black;
+        }
+    </style>
 
 {% endblock content %}
