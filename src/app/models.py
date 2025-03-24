@@ -28,3 +28,17 @@ class Cas(Convention):
         verbose_name_plural = "cas"
     def __str__(self):
         return self.title
+
+
+class Messages(Convention):
+    name = models.CharField(max_length=254, blank=True, null=True)
+    subject = models.CharField(max_length=254, blank=True, null=True)
+    email = models.EmailField(max_length=254)
+    message = models.TextField()
+    
+    class Meta:
+        verbose_name = "Messages"
+        verbose_name_plural = "Messages"
+        
+    def __str__(self):
+        return self.email

@@ -137,3 +137,13 @@ MEDIA_ROOT = BASE_DIR / 'media_cdn'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 APPEND_SLASH = True
+
+#  hprn wbhw kwgg pqed
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "azeridwan10@gmail.com"
+EMAIL_HOST_PASSWORD = "hprnwbhwkwggpqed"
+EMAIL_PORT = 587

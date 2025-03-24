@@ -27,31 +27,31 @@
                     <h2 class="contact-title">Nous Contactez</h2>
                 </div>
                 <div class="col-lg-8">
-                    <form class="form-contact contact_form" action="https://preview.colorlib.com/theme/chariter/contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                    <form id="form" class="form-contact contact_form" action="" method="post" id="contactForm" novalidate="novalidate">
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer un message'" placeholder=" Entrer un message"></textarea>
+                                    <textarea class="form-control w-100" v-model="message" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer un message'" placeholder=" Entrer un message"></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer Votre nom'" placeholder="Entrer Votre nom">
+                                    <input class="form-control valid" v-model="name" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer Votre nom'" placeholder="Entrer Votre nom">
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer votre adresse email'" placeholder="E-mail">
+                                    <input class="form-control valid" v-model="email" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Entrer votre adresse email'" placeholder="E-mail">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enrter le sujet'" placeholder="Entrer le sujet">
+                                    <input class="form-control" name="subject" v-model="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enrter le sujet'" placeholder="Entrer le sujet">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="genric-btn primary-border">Envoyer</button>
+                            <button type="submit" class="genric-btn primary-border" @click.prevent="sendData()">Envoyer</button>
                         </div>
                     </form>
                 </div>
@@ -83,7 +83,68 @@
     </section>
 
 </main>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+ new Vue({
+    el: '#form',
+    data: {
+        'name': '',
+        'message': '',
+        'email': '',
+        'subject': '',
+    },
+    methods: {
+        sendData(){
+            if (this.name == '', this.email == ''){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur',
+                    text: "veuillez renseigner tous les champs !!!",
+                    showConfirmButton: true,
+                })
+            }else if(!/^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(this.email)){
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Erreur',
+                  text: "veuillez renseigner un mail valide svp !!!",
+                  showConfirmButton: true,
+                })
+            }else{
+                let myForm = new FormData();
+                myForm.append('name', this.name)
+                myForm.append('message', this.message)
+                myForm.append('email', this.email)
+                myForm.append('subject', this.subject)
 
+                axios.defaults.xsrfCookieName = 'XSRF-TOKEN'
+                axios.defaults.xsrfHeaderName = 'X-XSRF-TOKEN'
+                axios.post(" {% url 'sendMail' %} ", myForm,{})
+                .then(function(response){
+                    if (response.data.success){
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Demande envoyee',
+                            text: response.data.msg ,
+                            showConfirmButton: false,
+                            timer: 3500
+                        });
+                        window.setTimeout(function(){window.location.reload();}, 3500);
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Demande non envoyee',
+                            text: response.data.msg ,
+                            showConfirmButton: true,
+                        });
+                    }
+                })
+            }
+        }
+    }
+ })
+</script>
 {% endblock content %}
 
 

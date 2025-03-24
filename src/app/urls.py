@@ -4,6 +4,7 @@ from .views import (
     contact,
     cas,
     about,
+    send_post_mail,
 )
 
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     path('contact', contact, name='contact'),
     path('cas', cas, name='cas'),
     path('a-props', about, name='about'),
+    path('send-mail', send_post_mail, name='sendMail'),
 ]
