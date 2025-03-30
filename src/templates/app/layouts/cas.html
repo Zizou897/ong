@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-5 col-lg-6 col-md-6">
                         <div class="hero-caption hero-caption2">
-                            <h2>Tous Nos Différents Cas</h2>
+                            <h2 class="roboto-police">Tous nos différents Cas</h2>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                 <div class="col-lg-8 col-md-10 col-sm-11">
                     <!-- Section Tittle -->
                     <div class="section-tittle text-center mb-60">
-                        <h2>Nos Cas</h2>
+                        <h2 class="roboto-police">Nos Cas</h2>
                     </div>
                 </div>
             </div>
@@ -35,14 +35,21 @@
                         <div class="properties pb-30">
                             <div class="properties-card"  style="background-color:#fff" onmouseover="this.style.boxShadow='0px 8px 8px 0px rgba(2,25,65,0.08)'" >
                                 <div class="properties-img">
-                                    <a href="#"><img src="{{cas.picture.url}}" alt=""></a>
+                                    {% if cas.is_image == 'image' %}
+                                        <a href="#"><img src="{{cas.picture_video.url}}" alt=""></a>
+                                    {% elif cas.is_video == 'video' %}
+                                    <video width="100%" height="auto" controls>
+                                        <source src="{{ cas.picture_video.url }}" type="video/mp4">
+                                        
+                                    </video>
+                                    {% endif %}
                                     <!-- Progress Bar -->
                                     
                                     <!-- / progress -->
                                 </div>
                                 <div class="wrap-wrapper">
                                     <div class="properties-caption">
-                                        <h3><a href="#" class="card-hover" onmouseover="this.style.color='#1f2b7b'" >{{cas.title}}</a></h3>
+                                        <h3 class="roboto-police"><a href="#" class="card-hover" onmouseover="this.style.color='#1f2b7b'" >{{cas.title}}</a></h3>
                                         <p>{{cas.description  | truncatechars:50}}</p>
                                     </div>
                                     <div class="properties-footer d-flex justify-content-between align-items-center">

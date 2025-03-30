@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
                                 <div class="hero-caption">
-                                    <h1 data-animation="fadeInUp" data-delay=".2s">Soutenir les veuves, reconstruire des vies</h1>
+                                    <h1 class="roboto-police" data-animation="fadeInUp" data-delay=".2s">Soutenir les veuves, reconstruire des vies</h1>
                                     <P data-animation="fadeInUp" data-delay=".4s">Les veuves font faces à de nombreux défis. Apportons-leus le soutient et la solidarité dont elles ont besoins.</P>
                                     
                                 </div>
@@ -26,7 +26,7 @@
                         <div class="row justify-content-end">
                             <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
                                 <div class="hero-caption">
-                                    <h1 data-animation="fadeInUp" data-delay=".2s">Soutenir une cause qui vous tient à coeur</h1>
+                                    <h1 class="roboto-police" data-animation="fadeInUp" data-delay=".2s">Soutenir une cause qui vous tient à coeur</h1>
                                     <P data-animation="fadeInUp" data-delay=".4s"> c’est s’engager pour un monde meilleur. Que ce soit à travers des dons,
                                          du bénévolat ou la sensibilisation, chaque action compte. 🌍💙</P>
                                     
@@ -41,7 +41,7 @@
                         <div class="row">
                             <div class="col-xxl-6 col-xl-7 col-lg-7 col-md-8 col-sm-10">
                                 <div class="hero-caption">
-                                    <h1 data-animation="fadeInUp" data-delay=".2s">Briser le silence, proteger l'innocence</h1>
+                                    <h1 class="roboto-police" data-animation="fadeInUp" data-delay=".2s">Briser le silence, proteger l'innocence</h1>
                                     <P data-animation="fadeInUp" data-delay=".4s">Chaque enfant merite  de grandir dans un environnement sur et aimant. Ensemble, mettant fin à la maltraitance infantile</P>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                     <div class="col-xl-7 col-lg-8 col-md-11">
                         <!-- Section Tittle -->
                         <div class="section-tittle text-center">
-                            <h2>Nous servons le peuple</h2>
+                            <h2 class="roboto-police">Nous servons le peuple</h2>
                             <p>Nous luttons pour un monde plus juste en protégeant les enfants, les femmes et les veuves contre la maltraitance et les violences. <br> Rejoignez-nous dans cette mission essentielle</p>
                         </div> 
                     </div>
@@ -71,7 +71,7 @@
                     <div class="col-lg-8 col-md-10 col-sm-11">
                         <!-- Section Tittle -->
                         <div class="section-tittle text-center mb-60">
-                            <h2>Nos différents cas</h2>
+                            <h2 class="roboto-police">Nos différents cas</h2>
                         </div>
                     </div>
                 </div>
@@ -82,10 +82,13 @@
                             <div class="properties pb-30">
                                 <div class="properties-card"  style="background-color:#fff" onmouseover="this.style.boxShadow='0px 8px 8px 0px rgba(2,25,65,0.08)'" >
                                     <div class="properties-img">
-                                        <a href="#"><img src="{{cas.picture.url}}" alt=""></a>
-                                        <!-- Progress Bar -->
-                                        
-                                        <!-- / progress -->
+                                        {% if cas.is_image == 'image' %}
+                                        <a href="#"><img src="{{cas.picture_video.url}}" alt=""></a>
+                                    {% elif cas.is_video == 'video' %}
+                                    <video width="100%" height="auto" controls>
+                                        <source src="{{ cas.picture_video.url }}" type="video/mp4">
+                                    </video>
+                                    {% endif %}
                                     </div>
                                     <div class="wrap-wrapper">
                                         <div class="properties-caption">
@@ -121,7 +124,7 @@
                         <div class="right-caption">
                             <!-- Section Tittle -->
                             <div class="section-tittle">
-                                <h2>Qui sommes-nous ?</h2>
+                                <h2 class="roboto-police">Qui sommes-nous ?</h2>
                             </div>
                             <div class="support-caption">
                                 <p class="mb-10"><strong> ONG International de Lutte Contre la Maltraitance de l'Enfant, de la Femme et de la Veuve</strong> ( ILCMEFV ) lutte contre la maltraitance des enfants, femmes et veuves, offrant protection, soutien et espoir aux plus vulnérables.</p>
@@ -136,19 +139,19 @@
 
         <div class="count-down-area pt-25 section-img-bg2"  data-background="{% static 'app/assets/img/gallery/pattern.jpg' %}">
             <div class="container">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center roboto-police">
                     <div class="col-lg-12 col-md-12">
                         <div class="count-down-wrapper" >
                             <div class="row justify-content-between">
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="single-counter d-flex align-items-center">
-                                        <div class="counter-img">
+                                        <div class="counter-img"> 
                                             <img src="assets/img/icon/count-icon1.svg" alt="">
                                         </div>
                                         <div class="captions">
                                             <span class="counter" style="color:black">35</span>
                                             <span class="plus" style="color:black">+</span>
-                                            <p class="" style="color:black">Cas Traités</p>
+                                            <p class="roboto-police" style="color:black">Cas Traités</p>
                                         </div>
                                     </div>
                                 </div>
@@ -160,7 +163,7 @@
                                         <div class="captions">
                                             <span class="counter" style="color:black">12</span>
                                             <span class="plus" style="color:black"></span>
-                                            <p class="color-green" style="color:black">Enfants maltraités</p>
+                                            <p class="roboto-police" style="color:black">Enfants maltraités</p>
                                         </div>
                                     </div>
                                 </div>
@@ -172,7 +175,7 @@
                                         <div class="captions">
                                             <span class="counter" style="color:black">10</span>
                                             <span class="plus" style="color:black"></span>
-                                            <p class="color-green" style="color:black">Femmes maltraités</p>
+                                            <p class="roboto-police" style="color:black">Femmes maltraités</p>
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +187,7 @@
                                         <div class="captions">
                                             <span class="counter"style="color:black">13</span>
                                             <span class="plus" style="color:black"></span>
-                                            <p class="color-green"style="color:black">Veuves</p>
+                                            <p class="roboto-police" style="color:black">Veuves</p>
                                         </div>
                                     </div>
                                 </div>
@@ -204,7 +207,7 @@
                                 <img src= "{% static 'assets/img/icon/services1.svg' %}" alt="">
                             </div>
                             <div class="services-cap">
-                                <h4><strong>La Maltraitance d'enfant</strong></h4>
+                                <h4 class="roboto-police"><strong>La Maltraitance d'enfant</strong></h4>
                                 <p>Chaque jour, des millions d’enfants subissent violences, négligence et exploitation, affectant gravement leur avenir. Protégeons-les dès aujourd’hui pour un futur meilleur !</p>
                             </div>
                         </div>
@@ -215,7 +218,7 @@
                                 <img src="assets/img/icon/services2.svg" alt="">
                             </div>
                             <div class="services-cap">
-                                <h4><strong>La Maltraitance de la femme</strong></h4>
+                                <h4 class="roboto-police"><strong>La Maltraitance de la femme</strong></h4>
                                 <p>Les violences envers les femmes sont alarmantes et souvent impunies, les laissant sans protection. Aucune ne devrait vivre dans la peur. Agissons pour un monde plus sûr et équitable !
                                 </p>
                             </div>
@@ -227,7 +230,7 @@
                                 <img src="assets/img/icon/services1.svg" alt="">
                             </div>
                             <div class="services-cap">
-                                <h4><strong>La Maltraitance de la veuve</strong></h4>
+                                <h4 class="roboto-police"><strong>La Maltraitance de la veuve</strong></h4>
                                 <p>Dans de nombreuses sociétés, les veuves sont discriminées, privées de leurs droits et laissées sans ressources. Elles méritent dignité et justice. Aidons-les à reconstruire leur avenir.
                                 </p>
                             </div>
