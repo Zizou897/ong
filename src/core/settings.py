@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -147,3 +148,43 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = "azeridwan10@gmail.com"
 EMAIL_HOST_PASSWORD = "hprnwbhwkwggpqed"
 EMAIL_PORT = 587
+
+
+JAZZMIN_SETTINGS = {
+    
+    "site_title": "Admin ILCMEFV",
+    "site_header": "Tableau de Bord",
+    "site_brand": "ONG ILCMEFV",
+    "welcome_sign": "Bienvenue sur le panneau d’administration",
+    "copyright": "ong ilcmefv Pro © 2025",
+    "hide_apps": [],  # Assure-toi que tes apps ne sont pas cachées ici
+    "order_with_respect_to": ["app"],
+    
+    
+    # Icône et logo
+    #"site_logo": "mon_app/logo.png",  # Mets ton logo dans /static/mon_app/logo.png
+    #"login_logo": "mon_app/logo.png",
+    
+    # Menu de navigation
+    "topmenu_links": [
+        {"name": "Accueil", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Site Web", "url": "/", "new_window": True},
+    ],
+    
+    # Organisation du menu latéral
+    "custom_links": {
+        "app": [{"name": "Ajouter un article", "url": "admin:app_cas_add", "icon": "fas fa-plus"}]
+    },
+    
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "app.cas": "fas fa-newspaper",
+        "app.Messages": "fas fa-envelope",
+    },
+   
+    
+    # Personnalisation des couleurs
+    "theme": "cyborg",  # Essaye aussi "lux", "solar", "darkly", "flatly"...
+}

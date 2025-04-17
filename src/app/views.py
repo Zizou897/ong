@@ -88,13 +88,6 @@ def send_post_mail(request):
         if created:
             msg = 'Vous recevrez un mail de la part de ILCMEFV'
             
-            send_mail(
-                subject,
-                message,
-                settings.EMAIL_HOST_USER,
-                [email],
-                fail_silently=True,
-            )
         
         else:
             test_message.save()
